@@ -1,6 +1,6 @@
 # CTF-practice
 Some cryptography python scripts:
- ## Caesar Cipher code-1 
+ ## 'Caesar Cipher code-1' 
 A lightweight python script that decrypts text encrypted with a classic Caesar Cipher. This project focuses on string manipulation and basic modular arithmetic.
 ### Features
  * Decrypts uppercase and lowercase characters.
