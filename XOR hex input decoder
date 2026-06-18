@@ -1,0 +1,20 @@
+# XOR decoder for hex input
+# most common CTF scenario
+
+def xor_decode(hex_string, key):
+    # convert hex string to bytes
+    encoded_bytes = bytes.fromhex(hex_string)
+    decoded = ""
+    for i, byte in enumerate(encoded_bytes):
+        key_char = key[I % len(key)]
+        decoded += chr(byte ^ ord(key_char))
+    return decoded
+
+hex_input = input("Enter hex encoded string: ")
+key = input("Enter key: ")
+
+result = xor_decoded(hex_input, key)
+print("Decoded:", result)
+
+# example hex input: "0a 1b 2c" with key "A"
+# bytes.fromhex() converts "48656c6c6f" -> actual bytes
