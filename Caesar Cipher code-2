@@ -1,13 +1,13 @@
 def decode(text, shift):
-      alphabet = "abcdefghijklmnopqrstuvwxyz"
-      result = ""
-      for char in text.lower():
-         if char in alphabet:
-             index = alphabet.index(char)
-             result += alphabet[(index - shift) % 26]
-         else:
-             result += char
-      return result
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    result = ""
+    for char in text.lower():
+        if char in alphabet:
+            index = alphabet.index(char)
+            result += alphabet[(index - shift) % 26]
+        else:
+            result += char
+    return result
 
 
 
