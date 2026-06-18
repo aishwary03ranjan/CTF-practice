@@ -1,0 +1,17 @@
+#Base64 multiple round decoder
+# CTFs sometimes encode multiple times
+import base64
+
+encoded = input("Enter Base64 string: ")
+rounds = int(input("How many times to decode: ")
+
+result = encoded
+for i in range(rounds):
+    try:
+        result = base64.b64decode(result).decode()
+        print(f"Round {i+1}: {result}")
+    except:
+        print(f"Stopped at round {i+1} - not valid Base64")
+        break
+
+# example output: encode "Hello" 3 times then decode 3 times
