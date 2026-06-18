@@ -1,0 +1,45 @@
+def decode_overall( text )
+ alphabet = "abcdefghijklmnopqrstuvwxyz"
+ for shift in range(26):
+  result = ""
+  for char in text.lower():
+   if char in alphabet:
+     result += alphabet[(alphabet.index(char) - shift) % 26]
+   else:
+     result += char
+  print(f"Shift {shift}: {result}")
+
+
+
+
+# execution of the code:
+decode_overall("a")
+
+
+# output:
+# shift 0: a
+# shift 1: b
+# shift 2: c
+# shift 3: d
+# shift 4: e
+# shift 5: f
+# shift 6: g
+# shift 7: h
+# shift 8: i
+# shift 9: j
+# shift 10: k
+# shift 11: l
+# shift 12: m
+# shift 13: n
+# shift 14: o
+# shift 15: p
+# shift 16: q
+# shift 17: r
+# shift 18: s
+# shift 19: t
+# shift 20: u
+# shift 21: v
+# shift 22: w
+# shift 23: x
+# shift 24: y
+# shift 25: z
