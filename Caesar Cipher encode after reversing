@@ -1,13 +1,13 @@
 def reverse_caesar(text, shift):
-  reversed_text = text[::-1]
-  result = ""
-  for char in reversed_text:
-    if char.isalpha():
-      base = 65 if char.isupper() else 97
-      result += chr((ord(char) - base + shift) % 26 + base)
-    else:
-      result += char
-  return result
+    reversed_text = text[::-1]
+    result = ""
+    for char in reversed_text:
+        if char.isalpha():
+            base = 65 if char.isupper() else 97
+            result += chr((ord(char) - base + shift) % 26 + base)
+        else:
+            result += char
+    return result
 
 
 message = "got you"
