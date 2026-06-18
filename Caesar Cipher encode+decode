@@ -1,14 +1,14 @@
 def caesar(text, shift, mode):
- result = ""
- if mode == "decode":
-    shift = -shift
-  for char in text:
-    if char.isalpha():
-     base = 65 if char.isupper() else 97
-     result += chr((ord(char) - base + shift) % 26 + base)
-   else:
-     result += char
-  return result
+    result = ""
+    if mode == "decode":
+        shift = -shift
+    for char in text:
+        if char.isalpha():
+            base = 65 if char.isupper() else 97
+            result += chr((ord(char) - base + shift) % 26 + base)
+        else:
+            result += char
+    return result
 
 message = "hello"
 shift = 3
