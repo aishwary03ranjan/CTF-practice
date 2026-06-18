@@ -1,0 +1,26 @@
+# Auto detect if string is Base64 and decode
+import base64
+
+def is_base64(text):
+    try:
+        # Base64 strings length must be multiple of 4
+        if len(text) % 4 != 0:
+            return False
+        base64.b64decode(text)
+        return True
+    except:
+        return False
+
+text=input("Enter string: ")
+
+if is_base64(text):
+    decoded = base64.b64decode(text).decode()
+    print("Valid Base64!")
+    print("Decoded:", decoded)
+else:
+    print("Not Base64")
+    # encoding it instead
+    encoded = base64.b64encode(text.encode()).decode()
+    print("Enclosed version:", encoded)
+
+# automatically figures out what to do with the input
