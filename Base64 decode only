@@ -1,0 +1,13 @@
+# Base64 decoder -> most common CTF use case
+import base64
+
+encoded = input("Enter Base64 string: ")
+
+try:
+    decoded = base64.b64decode(encoded).decode()
+    print("Decoded:", decoded)
+except:
+    print("Invalid Base64 string")
+
+# example output 1: (input = "SGVsbG8="), (output = "Hello")
+# example output 2: (input = "Q1RGe2Jhc2U2NH0="), (output = "CTF{base64}")
