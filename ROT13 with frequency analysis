@@ -1,0 +1,25 @@
+# ROT13 with character frequency analysis
+# helps understand the encoded message better
+
+Message = input("Enter message: ")
+
+# Applying ROT13
+result = ""
+for char in message:
+  if char.isalpha():
+    base = 65 if char.isupper() else 97
+    result += chr((ord(char) - base + 13) % 26 + base)
+  else:
+    result += char
+
+print("ROT13:", result)
+
+# Counting frequency of each letter in result
+print("\nLetter frequency:")
+for letter in "abcdefghijklmnopqrstuvwxyz"
+  count = result.lower().count(letter)
+  if count > 0:
+     print(f"{letter}: {count}")
+
+
+# example: (input = Hello) (ROT13 = Uryyb) (Letter frequency = u:1, r:1, y:2, b:1)
