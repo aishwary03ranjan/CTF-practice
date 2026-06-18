@@ -2,14 +2,14 @@
 # ROT13 = Caesar shift 13
 
 def rot13(text)
-  result = ""
-  for char in text:
-     if char.isalpha():
-         base = 65 if char.isalpha() else 97
-         result += chr((ord(char) - base + 13) % 26 + base)
-     else:
-         result += char
-  return result
+    result = ""
+    for char in text:
+        if char.isalpha():
+            base = 65 if char.isalpha() else 97
+            result += chr((ord(char) - base + 13) % 26 + base)
+        else:
+            result += char
+    return result
 
 
 message = input("Enter message:")
