@@ -1,21 +1,21 @@
 # Vigenère Cipher - both encode and decode
 
 def vigenère(text, key, mode)
-  result = ""
-  key = key.lower()
-  key_index = 0
-  for char in text:
-     if char.isalpha():
-         shift = ord(key[key_index % len(key)]) - 97
-         base = 65 if char.isupper() else 97
-         if mode == "encode":
-              result += chr((ord(char) - base + shift) % 26 + base)
-         else:
-              result += chr((ord(char) - base - shift) % 26 + base)
-         key_index += 1
-     else:
-         result += char
-  return result
+    result = ""
+    key = key.lower()
+    key_index = 0
+    for char in text:
+        if char.isalpha():
+            shift = ord(key[key_index % len(key)]) - 97
+            base = 65 if char.isupper() else 97
+            if mode == "encode":
+                result += chr((ord(char) - base + shift) % 26 + base)
+            else:
+                result += chr((ord(char) - base - shift) % 26 + base)
+            key_index += 1
+        else:
+            result += char
+    return result
 
 message = input("Enter message: ")
 key = input("Enter keyword: ")
