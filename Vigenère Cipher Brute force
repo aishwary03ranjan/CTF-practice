@@ -1,18 +1,18 @@
 # Vigenère brute force using common English keywords
 
 def decode(text, key)
-  alphabet = "abcdefghijklmnopqrstuvwxyz"
-  result = ""
-  key = key.lower()
-  key_index = 0
-  for char in text.lower():
-     if char in alphabet:
-         shift = alphabet.index(key[key_index % len(key)])
-         result += alphabet[(alphabet.index(char) - shift) % 26]
-         key_index += 1
-     else:
-         result += char
-  return result
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    result = ""
+    key = key.lower()
+    key_index = 0
+    for char in text.lower():
+        if char in alphabet:
+            shift = alphabet.index(key[key_index % len(key)])
+            result += alphabet[(alphabet.index(char) - shift) % 26]
+            key_index += 1
+        else:
+            result += char
+    return result
 
 # keywords to look for in the DECODED message to verify it's correct
 target_keys = ["key", "secret", "flag", "ctf", "crypto", "cipher", "hack"]
@@ -27,8 +27,8 @@ for key in possible_keys:
     decoded_text = decode(message, key)
 
     # Check if the decrypted text contains any of our target keywords
-        if any(keyword in decoded_text for keyword in target_keywords):
-          print(f"[+] Match Found! Key '{key}': {decoded_text}")
+          if any(keyword in decoded_text for keyword in target_keywords):
+              print(f"[+] Match Found! Key '{key}': {decoded_text}")
 
 # useful in CTFs when you don't know the key
 
