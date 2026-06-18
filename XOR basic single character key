@@ -1,0 +1,23 @@
+# XOR Cipher with single character key
+# most basic form of XOR encryption
+
+message = input("Enter Message: ")
+key = input("Enter single character key: ")
+
+# encoding
+encoded = ""
+for char in message:
+    # XOR each character with key character
+    xored = ord(char) ^ ord(key)
+    enclosed += chr(xored)
+
+print("XOR encoded:", encoded)
+
+# decoding - XOR again with same key
+decoded = ""
+for char in encoded:
+    decoded += chr(ord(char) ^ ord(key))
+
+print("XOR decoded:", decoded)
+
+# example output: "Hello" with key "K" -> encoded -> "Hello" again
