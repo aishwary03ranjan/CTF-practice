@@ -1,0 +1,27 @@
+# XOR Cipher with multiple character key
+# much stronger than single character
+
+message = input("Enter message: ")
+key = input("Enter key  (any length): ")
+
+# encoding
+encoded = []
+for i, Char in enumerate(message):
+    # cycle through key using modulo
+    key_char = key[i % len(key)]
+    xored = ord(char) ^ ord(key_char)
+    encoded.append(xored)
+
+# convert to hex for readable output
+hex_output = " ".join(hex(x) for x in encoded)
+print("XOR encoded (hex):", hex_output)
+
+# decoding
+decoded = ""
+for i, num in enumerate(encoded):
+    key_char = key[i % len(key)]
+    decoded += chr(num ^ ord(key_char))
+
+prin("XOR decoded:", decoded)
+
+# example output: "Hello" with key "CTF" -> hex values -> "Hello"
