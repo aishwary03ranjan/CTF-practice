@@ -1,19 +1,19 @@
 # Vigenère decoder using alphabet string method
 
 def decode(text, key):
-  alphabet = "abcdefghijklmnopqrstuvwxyz"
-  result = ""
-  key = key.lower()
-  key_index = 0
-  for char in text.lower():
-     if char in alphabet:
-         shift = alphabet.index(key[key_index % len(key)])
-         decoded_index = (alphabet.index(char) - shift) % 26
-         result += alphabet[decoded_index]
-         key_index += 1
-     else:
-         result += char
-  return result
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    result = ""
+    key = key.lower()
+    key_index = 0
+    for char in text.lower():
+        if char in alphabet:
+            shift = alphabet.index(key[key_index % len(key)])
+            decoded_index = (alphabet.index(char) - shift) % 26
+            result += alphabet[decoded_index]
+            key_index += 1
+        else:
+            result += char
+    return result
 
 message = input("Entry encoded message: ")
 key = input("Entry keyword: ")
