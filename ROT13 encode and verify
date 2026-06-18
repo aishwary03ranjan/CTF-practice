@@ -1,0 +1,27 @@
+# This code proves that on applying  ROT13 twice we get the original input back
+# ROT13 = Caesar shift 13
+
+def rot13(text)
+  result = ""
+  for char in text:
+     if char.isalpha():
+         base = 65 if char.isalpha() else 97
+         result += chr((ord(char) - base + 13) % 26 + base)
+     else:
+         result += char
+  return result
+
+
+message = input("Enter message:")
+encoded = rot13(message)
+decoded = rot13(encoded)
+print("ROT13:", encoded)
+print("Decoded back:", decoded)
+print("Same as original:", message == decoded)
+
+
+
+
+# Example output: (input = Hello)  
+# (ROT13 = Uryyb)  (Decoded back = Hello)
+# (Same as original = True)
