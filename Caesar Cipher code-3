@@ -4,7 +4,7 @@ def decode_overall( text )
   result = ""
   for char in text.lower():
    if char in alphabet:
-     result += alphabet[(alphabet.index(char) - shift) % 26]
+     result += alphabet[(alphabet.index(char) + shift) % 26]
    else:
      result += char
   print(f"Shift {shift}: {result}")
