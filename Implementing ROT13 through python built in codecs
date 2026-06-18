@@ -1,0 +1,8 @@
+# to import the codecs module
+import codecs
+
+message = "Go over there"
+print(codecs.encode(message, 'rot13"))
+
+
+# output: Tb bire gurer
