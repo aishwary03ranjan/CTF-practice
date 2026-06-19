@@ -1,4 +1,4 @@
-def decode_overall( text )
+def decode_overall( text ):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     for shift in range(26):
         result = ""
