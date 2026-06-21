@@ -22,6 +22,6 @@ for i, num in enumerate(encoded):
     key_char = key[i % len(key)]
     decoded += chr(num ^ ord(key_char))
 
-prin("XOR decoded:", decoded)
+print("XOR decoded:", decoded)
 
 # example output: "Hello" with key "CTF" -> hex values -> "Hello"
