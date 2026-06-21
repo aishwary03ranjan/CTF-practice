@@ -9,7 +9,7 @@ encoded = ""
 for char in message:
     # XOR each character with key character
     xored = ord(char) ^ ord(key)
-    enclosed += chr(xored)
+    encoded += chr(xored)
 
 print("XOR encoded:", encoded)
 
